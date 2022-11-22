@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibiendo Datos...</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css
+    ">
+
+    <style media="screen">
+        html, body {
+            height: 100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            background: #34495E;
+        }
+
+
+        .text {
+            font-size:50px;
+            font-family:helvetica;
+            font-weight:bold;
+            
+            text-transform:uppercase;
+            text-align: center;
+            }
+        
+        .tomando_dato{
+            color: #a6e63f;
+        }
+
+        .dato_estable{
+            color: #e6743f;
+        }
+
+        .parpadea {
+            animation-name: parpadeo;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+            -webkit-animation-name:parpadeo;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            }
+
+            @-moz-keyframes parpadeo{  
+            0% { opacity: 1.0; }
+            50% { opacity: 0.0; }
+            100% { opacity: 1.0; }
+            }
+
+            @-webkit-keyframes parpadeo {  
+            0% { opacity: 1.0; }
+            50% { opacity: 0.0; }
+            100% { opacity: 1.0; }
+            }
+
+            @keyframes parpadeo {  
+            0% { opacity: 1.0; }
+            50% { opacity: 0.0; }
+            100% { opacity: 1.0; }
+            }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center align-self-center">
+            <h2 id="estableId" class="text "></h2>
+            <div class="card text-center" >
+                <h1 id="kilosId" class="display-1 p-4"></h1>
+            </div>
+
+            <div id="recalcular">
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js" class="display-1"></script>
+    <script>
+
+    </script>
+</body>
+</html>

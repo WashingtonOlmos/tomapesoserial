@@ -14,7 +14,7 @@ const server = http.createServer(app);  // creamo el servidor
 const io = new Server(server, {});
 server.listen(3000,()=>{
     console.log('servidor en puerto 3000')
-  })
+})
 
 app.use(express.static(__dirname + '/public'));
 
@@ -30,8 +30,6 @@ const port = new SerialPort({
 })
 
 
-
-
 port.on('open', function() {
     return console.log('puerto abierto');
 })
@@ -42,7 +40,7 @@ port.on('error', function(err){
 
 const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }))
 parser.on('data',function(data) {
-    console.log(String(data)) // Utilizo String para convertilo, ya que no solo recibo enteros.
+   // console.log(String(data)) // Utilizo String para convertilo, ya que no solo recibo enteros.
     io.emit('kilos',data);
 });
 

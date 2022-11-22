@@ -6,7 +6,7 @@ estableId.innerHTML = 'Tomando Datos...';
 const socket = io();
 
 socket.on('kilos', (data)=>{
-    console.log(data);
+   // console.log(data);
     let show = data.match("[0-9]+");
 
     let kilos = document.getElementById('kilosId');
@@ -16,8 +16,6 @@ socket.on('kilos', (data)=>{
 
     if(resultado){
         contador ++;
-        console.log(contador)
-
         if(contador >= 3){
             socket.disconnect()
             document.getElementById('estableId').classList.remove('parpadea', 'tomando_dato');
@@ -31,7 +29,7 @@ socket.on('kilos', (data)=>{
                 document.getElementById('estableId').classList.add('parpadea', 'tomando_dato');
                 estableId.innerHTML = 'Tomando Datos...';
                 socket.connect();
-            },3000)
+            },3000) // retomo el pesaje luego de 3segundos
         }
     }else {
         contador = 0;

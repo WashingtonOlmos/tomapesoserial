@@ -40,7 +40,7 @@ port.on('error', function(err){
 
 const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }))
 parser.on('data',function(data) {
-   // console.log(String(data)) // Utilizo String para convertilo, ya que no solo recibo enteros.
+    console.log(String(data)) // Utilizo String para convertilo, ya que no solo recibo enteros.
     io.emit('kilos',data);
 });
 

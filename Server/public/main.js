@@ -29,7 +29,7 @@ socket.on('kilos', (data)=>{
                 document.getElementById('estableId').classList.add('parpadea', 'tomando_dato');
                 estableId.innerHTML = 'Tomando Datos...';
                 socket.connect();
-            },3000) // retomo el pesaje luego de 3segundos
+            },5000) // retomo el pesaje luego de 3segundos
         }
     }else {
         contador = 0;
